@@ -1,12 +1,8 @@
 #!/usr/bin/env python3
 
-import alchemy
-import alchemy.elements
-
-if __name__ == "__main__":
-
-    print("\n=== Sacred Scroll Mastery ===")
-
+# Direct module access
+def direct_access():
+    import alchemy.elements
     print("\nTesting direct module access:")
     print(f"alchemy.elements.create_fire(): {alchemy.elements.create_fire()}")
     print(f"alchemy.elements.create_water(): "
@@ -15,6 +11,10 @@ if __name__ == "__main__":
           f"{alchemy.elements.create_earth()}")
     print(f"alchemy.elements.create_air(): {alchemy.elements.create_air()}")
 
+
+# Package-level access
+def package_access():
+    import alchemy
     print("\nTesting package-level access (controlled by __init__.py):")
     print(f"alchemy.create_fire(): {alchemy.create_fire()}")
     print(f"alchemy.create_water(): {alchemy.create_water()}")
@@ -32,3 +32,13 @@ if __name__ == "__main__":
     print("\nPackage metadata:")
     print(f"Version: {alchemy.__version__}")
     print(f"Author: {alchemy.__author__}")
+
+
+def ft_sacred_scroll():
+    print("\n=== Sacred Scroll Mastery ===")
+    direct_access()
+    package_access()
+
+
+if __name__ == "__main__":
+    ft_sacred_scroll()
